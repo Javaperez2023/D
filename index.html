@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Datos en Tabla con Botón de Descarga</title>
+  <style>
+    /* Botón de descarga */
+    .download-button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-bottom: 1rem;
+      background-color: #007bff; /* Azul */
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    .download-button:hover {
+      background-color: #0056b3; /* Un poco más oscuro al pasar el ratón */
+    }
+
+    /* Estilos básicos para la tabla */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+    }
+    thead {
+      background-color: #f2f2f2;
+    }
+    th {
+      text-align: left;
+    }
+    /* Alternar color de fondo en filas pares */
+    tbody tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Botón (enlace) que descarga el archivo datos.xlsx -->
+  <a href="datos.xlsx" download="datos.xlsx" class="download-button">Data</a>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Descripción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Internet Rojo -->
+      <tr>
+        <td>internetRojo1</td>
+        <td>fallo con servicio de internet, se verifica en sistema y vemos PERDIDA DE SEÑAL LUZ LOS, se verifica en TWISTER y vemos que no hay más clientes afectados.</td>
+      </tr>
+      <tr>
+        <td>internetRojo2</td>
+        <td>fallo con servicio de internet. Indica que el cable de la fibra está cortado, se verifica en TWISTER y vemos PERDIDA DE SEÑAL.</td>
+      </tr>
+      <tr>
+        <td>internetRojo3</td>
+        <td>fallo con servicio de internet, indica que el ROUTER tiene luces VERDES, se verifica en TWISTER y vemos ONT en estado POWER OFF.</td>
+      </tr>
+      <tr>
+        <td>internetRojo4</td>
+        <td>fallo con servicio de internet, indica que el ROUTER tiene luz LOS en ROJO, se verifica en TWISTER y vemos ONT en estado DESCONOCIDO, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>internetRojo5</td>
+        <td>fallo con servicio de internet, indica que el ROUTER tiene luz LOS en ROJO, se verifica en TWISTER y vemos ONT en estado AUTOFIND, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>internetRojo6</td>
+        <td>fallo con servicio de internet, indica que el ROUTER tiene luz LOS en ROJO, se verifica en TWISTER y vemos ONT en estado OFFLINE, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>internetRojo7</td>
+        <td>fallo con servicio de internet, se verifica en TWISTER y vemos ONT en estado CONECTADO, pero con niveles FUERA DE RANGO, vecinos OK, falla puntual.</td>
+      </tr>
+
+      <!-- Internet Verde -->
+      <tr>
+        <td>internetVerde1</td>
+        <td>fallo con servicio de internet, indica que el ROUTER tiene TODAS LAS LUCES EN VERDE, se verifica en TWISTER y vemos ONT en estado DESCONOCIDO, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>internetVerde2</td>
+        <td>fallo con servicio de internet, indica que el ROUTER tiene TODAS LAS LUCES EN VERDE, se verifica en TWISTER y vemos ONT en estado AUTOFIND, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>internetVerde3</td>
+        <td>fallo con servicio de internet, indica que el ROUTER tiene TODAS LAS LUCES EN VERDE, se verifica en TWISTER y vemos ONT en estado OFFLINE, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>internetVerde4</td>
+        <td>*</td>
+      </tr>
+      <tr>
+        <td>internetVerde5</td>
+        <td>*</td>
+      </tr>
+      <tr>
+        <td>internetVerde6</td>
+        <td>fallo con servicio de internet, se verifica en TWISTER y vemos más de tres VECINOS AFECTADOS en la misma fecha y hora, se consulta SIGMA y se encuentra cliente en MASIVA.</td>
+      </tr>
+      <tr>
+        <td>internetVerde7</td>
+        <td>procesos de servicio de internet, indica que el cable de la FIBRA está COLGANDO, pasa por la casa de un vecino, se valida TWISTER OK. Cliente con servicio y ONT OK.</td>
+      </tr>
+
+      <!-- Internet Base -->
+      <tr>
+        <td>internetBase1</td>
+        <td>fallo con servicio de internet, indica que los dispositivos se conectan SIN INTERNET, se valida TWISTER OK, morosidad al día. En ONT se CAMBIAN CANALES y REFRESH de IP, continúa sin funcionar.</td>
+      </tr>
+      <tr>
+        <td>internetBase2</td>
+        <td>fallo con servicio de internet, se valida TWISTER y vemos PERDIDA DE MONITOREO, se realiza RESET ELECTRICO y el servicio continúa sin funcionar.</td>
+      </tr>
+      <tr>
+        <td>internetBase3</td>
+        <td>fallo con servicio de internet, indica que presenta INTERMITENCIAS, se valida TWISTER OK. En ONT se realizan CONFIGURACIONES, se prueba con un video y el servicio mejora.</td>
+      </tr>
+      <tr>
+        <td>internetBase4</td>
+        <td>fallo con servicio de internet, indica que presenta INTERMITENCIAS, se valida TWISTER OK. En ONT se realizan CONFIGURACIONES, se prueba con un video y el servicio continúa con fallos.</td>
+      </tr>
+      <tr>
+        <td>internetBase5</td>
+        <td>fallo con servicio de internet, indica que su REPETIDOR presenta fallas, se realiza RESET ELECTRICO y el servicio continúa con fallos.</td>
+      </tr>
+      <tr>
+        <td>internetBase6</td>
+        <td>fallo con servicio de internet, indica que no puede acceder a UNA PÁGINA EN ESPECIFICO.  En ONT se realizan CONFIGURACIONES "DNS, PING, TRAZER", el fallo continúa, afectados "IP PÚBLICA, PING, TRAZER y PÁGINAS"</td>
+      </tr>
+      <tr>
+        <td>internetBase7</td>
+        <td>procesos de servicio de internet, indica que quiere CAMBIAR su CLAVE DE WIFI. En ONT se realiza el cambio, servicio OK.</td>
+      </tr>
+
+      <!-- TV Rojo -->
+      <tr>
+        <td>tvRojo1</td>
+        <td>fallo con servicio de televisión, se verifica en sistema y vemos PERDIDA DE SEÑAL LUZ LOS, se verifica en TWISTER y vemos que no hay más clientes afectados.</td>
+      </tr>
+      <tr>
+        <td>tvRojo2</td>
+        <td>fallo con servicio de televisión, Indica que el cable de la fibra está cortado, se verifica en TWISTER y vemos PERDIDA DE SEÑAL.</td>
+      </tr>
+      <tr>
+        <td>tvRojo3</td>
+        <td>fallo con servicio de televisión, indica que el ROUTER tiene luces VERDES, se verifica en TWISTER y vemos ONT en estado POWER OFF.</td>
+      </tr>
+      <tr>
+        <td>tvRojo4</td>
+        <td>fallo con servicio de televisión, indica que el ROUTER tiene luz LOS en ROJO, se verifica en TWISTER y vemos ONT en estado DESCONOCIDO, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>tvRojo5</td>
+        <td>fallo con servicio de televisión, indica que el ROUTER tiene luz LOS en ROJO, se verifica en TWISTER y vemos ONT en estado AUTOFIND, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>tvRojo6</td>
+        <td>fallo con servicio de televisión, indica que el ROUTER tiene luz LOS en ROJO, se verifica en TWISTER y vemos ONT en estado OFFLINE, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>tvRojo7</td>
+        <td>fallo con servicio de televisión, se verifica en TWISTER y vemos ONT en estado CONECTADO, pero con niveles FUERA DE RANGO, vecinos OK, falla puntual.</td>
+      </tr>
+
+      <!-- TV Verde -->
+      <tr>
+        <td>tvVerde1</td>
+        <td>fallo con servicio de televisión, indica que el ROUTER tiene TODAS LAS LUCES EN VERDE, se verifica en TWISTER y vemos ONT en estado DESCONOCIDO, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>tvVerde2</td>
+        <td>fallo con servicio de televisión, indica que el ROUTER tiene TODAS LAS LUCES EN VERDE, se verifica en TWISTER y vemos ONT en estado AUTOFIND, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>tvVerde3</td>
+        <td>fallo con servicio de televisión, indica que el ROUTER tiene TODAS LAS LUCES EN VERDE, se verifica en TWISTER y vemos ONT en estado OFFLINE, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>tvVerde4</td>
+        <td>fallo con servicio de televisión, indica que los CANALES se ven PIXELADOS/RF MAYOR, se valida TWISTER OK. En ONT FIBERHOME realizamos atenuación de RF y el servicio mejora.</td>
+      </tr>
+      <tr>
+        <td>tvVerde5</td>
+        <td>fallo con servicio de televisión, indica que los CANALES se ven PIXELADOS/RF MAYOR, se valida TWISTER OK. En ONT FIBERHOME realizamos atenuación de RF y el servicio continúa con fallos.</td>
+      </tr>
+      <tr>
+        <td>tvVerde6</td>
+        <td>fallo con servicio de televisión, indica que aparece el mensaje SIN SEÑAL, se valida TWISTER OK, se realiza RESET ELECTRICO, revisión de cableado, búsqueda de canales, el servicio se reestablece.</td>
+      </tr>
+      <tr>
+        <td>tvVerde7</td>
+        <td>fallo con servicio de televisión, indica que aparece el mensaje SIN SEÑAL, se valida TWISTER OK, se realiza RESET ELECTRICO, revisión de cableado, búsqueda de canales, el fallo continúa.</td>
+      </tr>
+
+      <!-- TV Base -->
+      <tr>
+        <td>tvBase1</td>
+        <td>fallo con servicio de televisión, indica que el PANEL del DECO dice BOOT, se valida TWISTER OK, se realiza RESET ELECTRICO, revisión de cableado, el fallo continúa.</td>
+      </tr>
+      <tr>
+        <td>tvBase2</td>
+        <td>fallo con servicio de televisión, indica fallo en UN CANAL, se valida TWISTER OK, se realiza RESET ELECTRICO, revisión de cableado, búsqueda de canales, el servicio se reestablece.</td>
+      </tr>
+      <tr>
+        <td>tvBase3</td>
+        <td>fallo con servicio de televisión, indica fallo en UN CANAL, se valida TWISTER OK, se realiza RESET ELECTRICO, revisión de cableado, búsqueda de canales, el fallo continúa.</td>
+      </tr>
+      <tr>
+        <td>tvBase4</td>
+        <td>fallo con servicio de televisión, indica que el DECO NO ENCIENDE, se valida TWISTER OK, se realiza RESET ELECTRICO, revisión de cableado, cambio de toma, el servicio retoma.</td>
+      </tr>
+      <tr>
+        <td>tvBase5</td>
+        <td>fallo con servicio de televisión, indica que el DECO NO ENCIENDE, se valida TWISTER OK, se realiza RESET ELECTRICO, revisión de cableado, cambio de toma, el fallo continúa.</td>
+      </tr>
+      <tr>
+        <td>tvBase6</td>
+        <td>fallo con servicio de televisión, se verifica en TWISTER y vemos más de tres VECINOS AFECTADOS en la misma fecha y hora, se consulta SIGMA y se encuentra cliente en MASIVA.</td>
+      </tr>
+      <tr>
+        <td>tvBase7</td>
+        <td>procesos de servicio de televisión, indica que el cable de la FIBRA está COLGANDO, pasa por la casa de un vecino, se valida TWISTER OK. Cliente con servicio y ONT OK.</td>
+      </tr>
+
+      <!-- TV GO -->
+      <tr>
+        <td>tvGo1</td>
+        <td>fallo con servicio de televisión MUNDO GO, indica que aparece el mensaje ERROR 510, se valida TWISTER OK, se realiza RESET ELECTRICO, revisión de cableado; cliente conectado por WIFI. En ONT se realiza REFRESH de IP y el servicio reestablece.</td>
+      </tr>
+      <tr>
+        <td>tvGo2</td>
+        <td>fallo con servicio de televisión MUNDO GO, indica que aparece el mensaje ERROR 510, se valida TWISTER OK, se realiza RESET ELECTRICO, revisión de cableado; cliente conectado por WIFI. En ONT se realiza REFRESH de IP y el fallo persiste, escalamos para que se garantice servicio por CABLE.</td>
+      </tr>
+      <tr>
+        <td>tvGo3</td>
+        <td>fallo con servicio de televisión MUNDO GO, indica que aparece el mensaje SIN SEÑAL, se valida TWISTER OK, se realiza RESET ELECTRICO, revisión de cableado; cliente conectado por CABLE. En ONT se realiza REFRESH de IP y el servicio se reestablece.</td>
+      </tr>
+      <tr>
+        <td>tvGo4</td>
+        <td>fallo con servicio de televisión MUNDO GO, indica que aparece el mensaje SIN SEÑAL, se valida TWISTER OK, se realiza RESET ELECTRICO, revisión de cableado; cliente conectado por CABLE. En ONT se realiza REFRESH de IP y el fallo persiste.</td>
+      </tr>
+      <tr>
+        <td>tvGo5</td>
+        <td>*</td>
+      </tr>
+      <tr>
+        <td>tvGo6</td>
+        <td>*</td>
+      </tr>
+      <tr>
+        <td>tvGo7</td>
+        <td>*</td>
+      </tr>
+
+      <!-- TV GO Plus -->
+      <tr>
+        <td>tvGoPlus1</td>
+        <td>fallo con servicio de televisión MUNDO GO, indica que aparece el mensaje LA SUSCRIPCIÓN ESTÁ DADA DE BAJA, se valida TWISTER OK, se realiza RESET ELECTRICO, revisión de cableado; cliente conectado por CABLE. En ONT se realiza REFRESH de IP y servicio retoma.</td>
+      </tr>
+      <tr>
+        <td>tvGoPlus2</td>
+        <td>fallo con servicio de televisión MUNDO GO, indica que aparece el mensaje LA SUSCRIPCIÓN ESTÁ DADA DE BAJA, se valida TWISTER OK, se realiza RESET ELECTRICO, revisión de cableado; cliente conectado por CABLE. En ONT se realiza REFRESH de IP y el fallo persiste.</td>
+      </tr>
+      <tr>
+        <td>tvGoPlus3</td>
+        <td>fallo con servicio de televisión MUNDO GO, indica que aparece UN CÓDIGO QR para VINCULAR, se valida TWISTER OK, se realiza revisión de cableado, cliente conectado por CABLE. Se realiza procesos de vinculación y el servicio reestablece.</td>
+      </tr>
+      <tr>
+        <td>tvGoPlus4</td>
+        <td>fallo con servicio de televisión MUNDO GO, indica que aparece UN CÓDIGO QR para VINCULAR, se valida TWISTER OK, se realiza revisión de cableado, cliente conectado por CABLE. Se realiza procesos de vinculación y el fallo continúa.</td>
+      </tr>
+      <tr>
+        <td>tvGoPlus5</td>
+        <td>*</td>
+      </tr>
+      <tr>
+        <td>tvGoPlus6</td>
+        <td>*</td>
+      </tr>
+      <tr>
+        <td>tvGoPlus7</td>
+        <td>*</td>
+      </tr>
+
+      <!-- Teléfono Rojo -->
+      <tr>
+        <td>telefonoRojo1</td>
+        <td>fallo con servicio de telefonía, se verifica en sistema y vemos PERDIDA DE SEÑAL LUZ LOS, se verifica en TWISTER y vemos que no hay más clientes afectados.</td>
+      </tr>
+      <tr>
+        <td>telefonoRojo2</td>
+        <td>fallo con servicio de telefonía, Indica que el cable de la fibra está cortado, se verifica en TWISTER y vemos PERDIDA DE SEÑAL.</td>
+      </tr>
+      <tr>
+        <td>telefonoRojo3</td>
+        <td>fallo con servicio de telefonía, indica que el ROUTER tiene luces VERDES, se verifica en TWISTER y vemos ONT en estado POWER OFF.</td>
+      </tr>
+      <tr>
+        <td>telefonoRojo4</td>
+        <td>fallo con servicio de telefonía, indica que el ROUTER tiene luz LOS en ROJO, se verifica en TWISTER y vemos ONT en estado DESCONOCIDO, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>telefonoRojo5</td>
+        <td>fallo con servicio de telefonía, indica que el ROUTER tiene luz LOS en ROJO, se verifica en TWISTER y vemos ONT en estado AUTOFIND, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>telefonoRojo6</td>
+        <td>fallo con servicio de telefonía, indica que el ROUTER tiene luz LOS en ROJO, se verifica en TWISTER y vemos ONT en estado OFFLINE, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>telefonoRojo7</td>
+        <td>fallo con servicio de telefonía, se verifica en TWISTER y vemos ONT en estado CONECTADO, pero con niveles FUERA DE RANGO, vecinos OK, falla puntual.</td>
+      </tr>
+
+      <!-- Teléfono Verde -->
+      <tr>
+        <td>telefonoVerde1</td>
+        <td>fallo con servicio de telefonía, indica que el ROUTER tiene TODAS LAS LUCES EN VERDE, se verifica en TWISTER y vemos ONT en estado DESCONOCIDO, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>telefonoVerde2</td>
+        <td>fallo con servicio de telefonía, indica que el ROUTER tiene TODAS LAS LUCES EN VERDE, se verifica en TWISTER y vemos ONT en estado AUTOFIND, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>telefonoVerde3</td>
+        <td>fallo con servicio de telefonía, indica que el ROUTER tiene TODAS LAS LUCES EN VERDE, se verifica en TWISTER y vemos ONT en estado OFFLINE, morosidad al día.</td>
+      </tr>
+      <tr>
+        <td>telefonoVerde4</td>
+        <td>fallo con servicio de telefonía, indica que el TELEFONO NO TIENE TONO, se verifica en TWISTER OK. En ONT estado IDLE. Se revisa T de TONO, RJ11 OK en TEL 1, se realiza prueba y el servicio se reestablece.</td>
+      </tr>
+      <tr>
+        <td>telefonoVerde5</td>
+        <td>fallo con servicio de telefonía, indica que el TELEFONO NO TIENE TONO, se verifica en TWISTER OK. En ONT estado IDLE. Se revisa T de TONO, RJ11 OK en TEL 1, se realiza prueba y el fallo continúa.</td>
+      </tr>
+      <tr>
+        <td>telefonoVerde6</td>
+        <td>fallo con servicio de telefonía, indica que el TELEFONO NO TIENE TONO, se verifica en TWISTER OK. En ONT estado REGISTER FAIL. Se revisa T de TONO, RJ11 OK en TEL 1, se realiza prueba y el servicio se reestablece.</td>
+      </tr>
+      <tr>
+        <td>telefonoVerde7</td>
+        <td>fallo con servicio de telefonía, indica que el TELEFONO NO TIENE TONO, se verifica en TWISTER OK. En ONT estado REGISTER FAIL. Se revisa T de TONO, RJ11 OK en TEL 1, se realiza prueba y el fallo continúa.</td>
+      </tr>
+
+      <!-- Códigos -->
+      <tr>
+        <td>codigo1</td>
+        <td>SSTT Domiciliario - Falla de servicio de internet - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo2</td>
+        <td>SSTT Domiciliario - Falla de servicio de internet - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo3</td>
+        <td>SSTT Domiciliario - Falla de servicio de internet - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo4</td>
+        <td>SSTT Domiciliario - Falla de servicio de internet - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo5</td>
+        <td>SSTT Domiciliario - Falla de servicio de internet - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo6</td>
+        <td>SSTT Domiciliario - Falla de servicio de internet - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo7</td>
+        <td>SSTT Domiciliario - Falla de servicio de internet - Niveles fuera de rango - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo8</td>
+        <td>SSTT Domiciliario - Falla de servicio de internet - Desconocido - Pdte Spte tecnico Nivel 2</td>
+      </tr>
+      <tr>
+        <td>codigo9</td>
+        <td>SSTT Domiciliario - Falla de servicio de internet - Autofind - Pdte Spte tecnico Nivel 2</td>
+      </tr>
+      <tr>
+        <td>codigo10</td>
+        <td>SSTT Domiciliario - Falla de servicio de internet - Offline - Pdte Spte tecnico Nivel 2</td>
+      </tr>
+      <tr>
+        <td>codigo11</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>codigo12</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>codigo13</td>
+        <td>SSTT Domiciliario - Falla del servicio de internet - Contingencia - Cerrado</td>
+      </tr>
+      <tr>
+        <td>codigo14</td>
+        <td>SOP - Requerimientos - Acometida baja - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo15</td>
+        <td>SSTT Domiciliario - Falla del servicio de internet - Cliente persiste con visita - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo16</td>
+        <td>SSTT Domiciliario - Falla del servicio de internet - Cliente persiste con visita - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo17</td>
+        <td>SSTT Domiciliario - Falla del servicio de internet - Ajuste a Frec. Máxima y canal automático - Cerrado</td>
+      </tr>
+      <tr>
+        <td>codigo18</td>
+        <td>SSTT Domiciliario - Falla del servicio de internet - Cliente persiste con visita - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo19</td>
+        <td>SSTT Domiciliario - Falla del servicio de internet - Repetidor dañado - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo20</td>
+        <td>SSTT Domiciliario - Falla de servicio de internet - Acceso pág. especifica - Pdte Spte tecnico Nivel 2</td>
+      </tr>
+      <tr>
+        <td>codigo21</td>
+        <td>SOP - Requerimientos - Cambio de credenciales WIFI - Cambio de clave y/o SSID - Cerrado</td>
+      </tr>
+      <tr>
+        <td>codigo22</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo23</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo24</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo25</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo26</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo27</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo28</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Niveles fuera de rango CATV - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo29</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Desconocido - Pdte Spte tecnico Nivel 2</td>
+      </tr>
+      <tr>
+        <td>codigo30</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Autofind - Pdte Spte tecnico Nivel 2</td>
+      </tr>
+      <tr>
+        <td>codigo31</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Offline - Pdte Spte tecnico Nivel 2</td>
+      </tr>
+      <tr>
+        <td>codigo32</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Capacitación cliente - Cerrado</td>
+      </tr>
+      <tr>
+        <td>codigo33</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Decodificador dañado - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo34</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Capacitación cliente - Cerrado</td>
+      </tr>
+      <tr>
+        <td>codigo35</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Decodificador dañado - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo36</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Decodificador dañado - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo37</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Capacitación cliente - Cerrado</td>
+      </tr>
+      <tr>
+        <td>codigo38</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Falla puntual en canal - Pdte Spte tecnico Nivel 2</td>
+      </tr>
+      <tr>
+        <td>codigo39</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Capacitación cliente - Cerrado</td>
+      </tr>
+      <tr>
+        <td>codigo40</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Decodificador dañado - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo41</td>
+        <td>SSTT Domiciliario - Falla del servicio de internet - Contingencia - Cerrado</td>
+      </tr>
+      <tr>
+        <td>codigo42</td>
+        <td>SOP - Requerimientos - Acometida baja - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo43</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Capacitación cliente - Cerrado</td>
+      </tr>
+      <tr>
+        <td>codigo44</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Decodificador dañado - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo45</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Capacitación cliente - Cerrado</td>
+      </tr>
+      <tr>
+        <td>codigo46</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Decodificador dañado - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo47</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>codigo48</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>codigo49</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>codigo50</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Capacitación cliente - Cerrado</td>
+      </tr>
+      <tr>
+        <td>codigo51</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Acceso a cuenta mundo go - Pdte Spte tecnico Nivel 2</td>
+      </tr>
+      <tr>
+        <td>codigo52</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Capacitación cliente - Cerrado</td>
+      </tr>
+      <tr>
+        <td>codigo53</td>
+        <td>SSTT Domiciliario - Falla de servicio de televisión - Acceso a cuenta mundo go - Pdte Spte tecnico Nivel 2</td>
+      </tr>
+      <tr>
+        <td>codigo54</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>codigo55</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>codigo56</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>codigo57</td>
+        <td>SSTT Domiciliario - Falla de servicio de telefonía - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo58</td>
+        <td>SSTT Domiciliario - Falla de servicio de telefonía - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo59</td>
+        <td>SSTT Domiciliario - Falla de servicio de telefonía - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo60</td>
+        <td>SSTT Domiciliario - Falla de servicio de telefonía - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo61</td>
+        <td>SSTT Domiciliario - Falla de servicio de telefonía - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo62</td>
+        <td>SSTT Domiciliario - Falla de servicio de telefonía - Perdida de señal LOS - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo63</td>
+        <td>SSTT Domiciliario - Falla de servicio de telefonía - Niveles fuera de rango - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo64</td>
+        <td>SSTT Domiciliario - Falla de servicio de telefonía - Desconocido - Pdte Spte tecnico Nivel 2</td>
+      </tr>
+      <tr>
+        <td>codigo65</td>
+        <td>SSTT Domiciliario - Falla de servicio de telefonía - Autofind - Pdte Spte tecnico Nivel 2</td>
+      </tr>
+      <tr>
+        <td>codigo66</td>
+        <td>SSTT Domiciliario - Falla de servicio de telefonía - Offline - Pdte Spte tecnico Nivel 2</td>
+      </tr>
+      <tr>
+        <td>codigo67</td>
+        <td>SSTT Domiciliario - Capacitación cliente - Cerrado</td>
+      </tr>
+      <tr>
+        <td>codigo68</td>
+        <td>SSTT Domiciliario - Falla de servicio de telefonía - Dispositivo telefónico dañado - Pdte Despacho</td>
+      </tr>
+      <tr>
+        <td>codigo69</td>
+        <td>SSTT Domiciliario - Capacitación cliente - Cerrado</td>
+      </tr>
+      <tr>
+        <td>codigo70</td>
+        <td>SSTT Domiciliario - Falla de servicio de telefonía - Status voice register fail - Pdte Spte tecnico Nivel 2</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>
